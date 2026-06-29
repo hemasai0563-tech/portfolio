@@ -133,13 +133,47 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Transmission Sending...';
 
-            setTimeout(() => {
-                // Mock success submission
-                showFormMessage('Connection established. Message sent successfully!', 'success');
-                contactForm.reset();
+            const actionUrl = contactForm.getAttribute('action');
+            if (!actionUrl || actionUrl.includes('YOUR_FORMSPREE_ID_HERE')) {
+                // If Formspree ID is not configured, fall back to a mock simulation
+                setTimeout(() => {
+                    showFormMessage('Simulation Mode: Form must be configured with a Formspree ID to receive real emails. See README.', 'error');
+                    contactForm.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnContent;
+                }, 1000);
+                return;
+            }
+
+            // Actual form submission using fetch
+            fetch(actionUrl, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showFormMessage('Message sent successfully! I will get back to you shortly.', 'success');
+                    contactForm.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            showFormMessage(data['errors'].map(error => error['message']).join(', '), 'error');
+                        } else {
+                            showFormMessage('Oops! There was a problem submitting your form.', 'error');
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                showFormMessage('Network error. Please check your internet connection.', 'error');
+            })
+            .finally(() => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnContent;
-            }, 1500);
+            });
         });
     }
 
