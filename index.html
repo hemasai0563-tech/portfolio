@@ -1,652 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO Meta Tags -->
-    <title>Hema Sai Siddula | Cloud & DevOps Engineer Portfolio</title>
-    <meta name="description"
-        content="Professional portfolio of Hema Sai Siddula, a results-oriented Cloud & DevOps Engineer specialized in Azure, AWS, Kubernetes, Docker, and CI/CD automation.">
-    <meta name="keywords"
-        content="Hema Sai Siddula, DevOps Engineer, Cloud Engineer, Azure, AWS, Kubernetes, Docker, Terraform, CI/CD, Hyderabad, Portfolio">
+    <meta name="description" content="Hema Sai Siddula - Premium Portfolio of an AWS DevOps Engineer with 5.3+ years experience. Expert in cloud infrastructure, automation, CI/CD, Kubernetes, and Terraform.">
+    <meta name="keywords" content="AWS, DevOps, Cloud Engineer, Terraform, Kubernetes, Docker, GitHub Actions, CI/CD, Hyderabad, India">
     <meta name="author" content="Hema Sai Siddula">
-
-    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Hema Sai Siddula | AWS DevOps Engineer Portfolio">
+    <meta property="og:description" content="Explore the cloud automation, CI/CD, and infrastructure-as-code projects of Hema Sai Siddula.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Hema Sai Siddula | Cloud & DevOps Engineer">
-    <meta property="og:description"
-        content="Transitioning complex business frameworks into highly optimized, automated cloud workflows. View skills, experience, and projects.">
-    <meta property="og:image" content="assets/images/profile.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Hema Sai Siddula | Cloud & DevOps Engineer">
-    <meta property="twitter:description"
-        content="Transitioning complex business frameworks into highly optimized, automated cloud workflows. View skills, experience, and projects.">
-    <meta property="twitter:image" content="assets/images/profile.png">
-
-    <!-- Icons & Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom CSS -->
+    <title>Hema Sai Siddula | AWS DevOps Engineer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <!-- Premium Colorful Light Blobs -->
+    <div class="light-grid-pattern"></div>
+    <div class="ambient-blob blob-peach"></div>
+    <div class="ambient-blob blob-cyan"></div>
+    <div class="ambient-blob blob-purple"></div>
 
-    <!-- Loading Animation Screen -->
-    <div id="loader-wrapper" class="loader-wrapper">
-        <div class="loader"></div>
-        <div class="loader-text">INITIALIZING SYSTEMS...</div>
-    </div>
-
-    <!-- Navigation Header -->
-    <header id="navbar" class="navbar">
-        <div class="container">
-            <a href="#hero" class="logo">
-                <span>&lt;</span>HEMASAI<span>.DEVOPS /&gt;</span>
+    <!-- Navigation -->
+    <header class="navbar" id="main-header">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="logo-link">
+                <span class="logo-text">HEMA SAI</span>
+                <span class="logo-dot">.</span>
             </a>
-            <nav>
-                <ul id="nav-links" class="nav-links">
-                    <li><a href="#hero" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#certs-edu" class="nav-link">Certs & Edu</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
+            
+            <nav class="nav-menu" id="nav-navigation" aria-label="Main Navigation">
+                <a href="#about" class="nav-link" id="link-about">About</a>
+                <a href="#skills" class="nav-link" id="link-skills">Skills</a>
+                <a href="#experience" class="nav-link" id="link-experience">Experience</a>
+                <a href="#projects" class="nav-link" id="link-projects">Projects</a>
+                <a href="#terminal" class="nav-link" id="link-terminal">Console</a>
+                <a href="#contact" class="nav-btn" id="link-contact">Contact</a>
             </nav>
-            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
+
+            <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-content">
-                        <div class="hero-subtitle">SYSTEM STATUS: ACTIVE</div>
-                        <h1 class="hero-title">Hema Sai Siddula</h1>
-                        <h2 class="text-gradient" style="font-size: 2rem; margin-bottom: 1.5rem;">Cloud & DevOps
-                            Engineer</h2>
-                        <p class="hero-desc">
-                            Dynamic and result-oriented Cloud & DevOps Engineer with a unique foundational background in
-                            large-scale business operations, cross-functional team leadership, and key stakeholder
-                            management. Adept at managing Azure/AWS environments, building resilient CI/CD pipelines,
-                            and driving operational efficiency from the server room to the commercial hub.
-                        </p>
-                        <div class="hero-btns">
-                            <!-- Link to local PDF file -->
-                            <a href="Hemasai_DevOps_Resume.pdf" download="Hema_Sai_Siddula_DevOps_Resume.pdf" class="btn btn-primary" id="download-resume">
-                                <i class="fas fa-download"></i> Download CV
-                            </a>
-                            <a href="#projects" class="btn btn-secondary">
-                                <i class="fas fa-project-diagram"></i> View Projects
-                            </a>
-                            <a href="#contact" class="btn btn-secondary">
-                                <i class="fas fa-envelope"></i> Contact Me
-                            </a>
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <div class="badge" id="hero-badge">
+                    <span class="pulse-dot"></span> Available for AWS / Cloud / DevOps
+                </div>
+                <h1 class="hero-title" id="main-title">
+                    AWS DevOps & <br><span class="gradient-text">Cloud Engineer</span>
+                </h1>
+                <p class="hero-description" id="hero-text">
+                    I am Hema Sai Siddula, an AWS DevOps Engineer with 5.3+ years of overall IT experience. I specialize in cloud infrastructure automation, CI/CD optimizations, and containerized deployments, bridging operations and business goals.
+                </p>
+                <div class="hero-actions" id="hero-buttons">
+                    <a href="#projects" class="btn btn-primary" id="btn-view-work">Explore Projects</a>
+                    <a href="#contact" class="btn btn-secondary" id="btn-get-touch">Get in Touch</a>
+                </div>
+            </div>
+
+            <!-- Horizontal DevOps Workflow Visualizer -->
+            <div class="pipeline-container" id="visualizer-container">
+                <div class="pipeline-header-label">CI/CD Automation Orchestration</div>
+                <div class="pipeline-track-horizontal">
+                    <!-- Step 1 -->
+                    <div class="pipeline-node active" id="node-commit">
+                        <div class="node-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                         </div>
+                        <span class="node-label">Code</span>
                     </div>
-                    <div class="hero-img-container">
-                        <div class="hero-img-wrapper">
-                            <img src="assets/images/profile.png" alt="Hema Sai Siddula Profile" class="hero-img">
+                    <div class="pipeline-connector-horizontal" id="conn-1"></div>
+                    <!-- Step 2 -->
+                    <div class="pipeline-node" id="node-build">
+                        <div class="node-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M9 22V12h6v10M2 12h20"></path></svg>
                         </div>
+                        <span class="node-label">Build</span>
+                    </div>
+                    <div class="pipeline-connector-horizontal" id="conn-2"></div>
+                    <!-- Step 3 -->
+                    <div class="pipeline-node" id="node-test">
+                        <div class="node-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <span class="node-label">Test</span>
+                    </div>
+                    <div class="pipeline-connector-horizontal" id="conn-3"></div>
+                    <!-- Step 4 -->
+                    <div class="pipeline-node" id="node-deploy">
+                        <div class="node-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                        </div>
+                        <span class="node-label">Deploy</span>
+                    </div>
+                </div>
+                <div class="pipeline-status">
+                    <span class="status-indicator"></span>
+                    Status: <span class="status-text running" id="pipe-status-text">Pipeline Idle</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Stats Section -->
+        <section class="about-section" id="about">
+            <div class="section-grid">
+                <div class="about-info">
+                    <h2 class="section-title">Professional Profile</h2>
+                    <p>
+                        I combine solid cloud engineering expertise with exceptional business acumen gained from 4 years in sales and business development. This dual background enables me to design infrastructure that is not just technically sound, but aligned with business priorities, cost-effective, and highly scalable.
+                    </p>
+                    <p>
+                        My core focus is optimizing software delivery lifecycle velocity. I automate manual processes, containerize workloads, manage stateful cloud resources via Terraform, and configure active monitoring stacks to assure maximum uptime and performance security.
+                    </p>
+                </div>
+                <div class="stats-grid" id="stats-dashboard">
+                    <div class="stat-card">
+                        <div class="stat-val">5.3+</div>
+                        <div class="stat-lbl">Years Overall Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-val">1.3+</div>
+                        <div class="stat-lbl">Years Cloud & DevOps</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-val">3+</div>
+                        <div class="stat-lbl">Enterprise Projects Deployed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-val">99.9%</div>
+                        <div class="stat-lbl">Infrastructure Target SLA</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="section reveal">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-grid">
-                    <div class="about-info-card profile-dashboard">
-                        <div class="dashboard-header">
-                            <span class="dashboard-play-icon">▶</span> PROFILE.JSON
-                        </div>
-                        <div class="dashboard-grid">
-                            <div class="dashboard-card">
-                                <div class="dashboard-value">1.5+</div>
-                                <div class="dashboard-label">Years Exp.</div>
-                            </div>
-                            <div class="dashboard-card">
-                                <div class="dashboard-value">2</div>
-                                <div class="dashboard-label">Roles Held</div>
-                            </div>
-                            <div class="dashboard-card">
-                                <div class="dashboard-value">2</div>
-                                <div class="dashboard-label">Certifications</div>
-                            </div>
-                            <div class="dashboard-card">
-                                <div class="dashboard-value">B.Sc.</div>
-                                <div class="dashboard-label">Degree</div>
-                            </div>
-                        </div>
-                        <div class="dashboard-skills">
-                            <span class="dash-skill active">Azure</span>
-                            <span class="dash-skill active">AWS</span>
-                            <span class="dash-skill active">Kubernetes</span>
-                            <span class="dash-skill active">Docker</span>
-                            <span class="dash-skill active">Terraform</span>
-                            <span class="dash-skill">Linux</span>
-                            <span class="dash-skill">YAML</span>
-                        </div>
-                        <div class="dashboard-location">
-                            <span class="location-pin">📍</span> Hyderabad, Telangana, India
-                        </div>
-                    </div>
-                    <div class="about-bio">
-                        <p class="about-bio-para">
-                            I am a Cloud & DevOps Engineer with a proven track record of successfully transitioning
-                            complex business frameworks into highly optimized, automated cloud workflows. Having managed
-                            heterogeneous workloads across both Azure and AWS environments, I focus on building reliable
-                            CI/CD pipelines, containerized architectures, and infrastructure-as-code automation.
-                        </p>
-                        <p class="about-bio-para">
-                            My unique foundation in large-scale business operations allows me to bridge the gap between
-                            technical infrastructure execution and high-level stakeholder requirements. By designing
-                            highly available systems and streamlining software delivery loops, I help organizations
-                            maximize agility and drive operational efficiency.
-                        </p>
-                        <div class="about-highlight">
-                            <strong>Mission:</strong> To engineer highly automated, resilient, and cost-effective cloud
-                            architectures that support enterprise scaling, minimizing downtime through proactive
-                            monitoring and modern IaC strategies.
-                        </div>
+        <!-- Technical Skills Section -->
+        <section class="skills-section" id="skills">
+            <div class="section-header-left">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Core technology stacks I specialize in for automated deployments and infrastructure provisioning.</p>
+            </div>
+            <div class="skills-grid-modern">
+                <!-- Category 1 -->
+                <div class="skills-box">
+                    <h3>Cloud Infrastructure</h3>
+                    <div class="skills-chips">
+                        <span class="chip aws"><span class="chip-dot"></span>AWS Cloud</span>
+                        <span class="chip aws"><span class="chip-dot"></span>Amazon EC2</span>
+                        <span class="chip aws"><span class="chip-dot"></span>Amazon ECS / ECR</span>
+                        <span class="chip aws"><span class="chip-dot"></span>Amazon S3</span>
+                        <span class="chip aws"><span class="chip-dot"></span>AWS IAM</span>
+                        <span class="chip aws"><span class="chip-dot"></span>AWS VPC</span>
+                        <span class="chip aws"><span class="chip-dot"></span>ELB / Auto Scaling</span>
+                        <span class="chip aws"><span class="chip-dot"></span>AWS CloudWatch</span>
+                        <span class="chip azure"><span class="chip-dot"></span>Azure Cloud</span>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section reveal">
-            <div class="container">
-                <h2 class="section-title">Technical Skillset</h2>
-                <div class="skills-grid">
-                    <!-- Cloud Platforms -->
-                    <div class="skill-category-card">
-                        <h3 class="skill-category-title"><i class="fas fa-cloud"></i> Cloud Platforms</h3>
-                        <div class="skills-list">
-                            <span class="skill-badge"><i class="fab fa-microsoft" style="color: #00a4ef;"></i>
-                                Azure</span>
-                            <span class="skill-badge"><i class="fab fa-aws" style="color: #ff9900;"></i> AWS</span>
-                        </div>
+                <!-- Category 2 -->
+                <div class="skills-box">
+                    <h3>DevOps & CI/CD</h3>
+                    <div class="skills-chips">
+                        <span class="chip terraform"><span class="chip-dot active"></span>Terraform (IaC)</span>
+                        <span class="chip k8s"><span class="chip-dot active"></span>Kubernetes (EKS)</span>
+                        <span class="chip docker"><span class="chip-dot active"></span>Docker Containerization</span>
+                        <span class="chip github-actions"><span class="chip-dot active"></span>GitHub Actions</span>
+                        <span class="chip pipeline-yaml"><span class="chip-dot active"></span>YAML Pipelines</span>
+                        <span class="chip git"><span class="chip-dot active"></span>Git & GitHub</span>
+                        <span class="chip helm"><span class="chip-dot active"></span>Helm Charts</span>
+                        <span class="chip ansible"><span class="chip-dot active"></span>Ansible Automate</span>
                     </div>
-
-                    <!-- DevOps & IaC -->
-                    <div class="skill-category-card">
-                        <h3 class="skill-category-title"><i class="fas fa-tools"></i> DevOps & IaC</h3>
-                        <div class="skills-list">
-                            <span class="skill-badge"><i class="fab fa-docker" style="color: #0db7ed;"></i>
-                                Docker</span>
-                            <span class="skill-badge"><i class="fas fa-cubes" style="color: #326ce5;"></i> Kubernetes
-                                (K8s)</span>
-                            <span class="skill-badge"><i class="fas fa-code-branch" style="color: #5c4ee5;"></i>
-                                Terraform</span>
-                            <span class="skill-badge"><i class="fas fa-file-code" style="color: #4ab724;"></i> YAML
-                                Pipelines</span>
-                        </div>
-                    </div>
-
-                    <!-- CI/CD & Version Control -->
-                    <div class="skill-category-card">
-                        <h3 class="skill-category-title"><i class="fas fa-sync"></i> CI/CD & Version</h3>
-                        <div class="skills-list">
-                            <span class="skill-badge"><i class="fab fa-git-alt" style="color: #f05032;"></i> Git</span>
-                            <span class="skill-badge"><i class="fab fa-github" style="color: #ffffff;"></i>
-                                GitHub</span>
-                            <span class="skill-badge"><i class="fas fa-robot" style="color: #00f0ff;"></i> Automated
-                                Deployments</span>
-                        </div>
-                    </div>
-
-                    <!-- Infrastructure & Monitoring -->
-                    <div class="skill-category-card">
-                        <h3 class="skill-category-title"><i class="fas fa-server"></i> Infrastructure & Monitor</h3>
-                        <div class="skills-list">
-                            <span class="skill-badge"><i class="fas fa-chart-line" style="color: #0078d4;"></i> Azure
-                                Monitor</span>
-                            <span class="skill-badge"><i class="fas fa-network-wired" style="color: #616265;"></i>
-                                VMware</span>
-                            <span class="skill-badge"><i class="fas fa-shield-alt" style="color: #10b981;"></i> Backup &
-                                Disaster Recovery</span>
-                        </div>
-                    </div>
-
-                    <!-- Operating Systems -->
-                    <div class="skill-category-card">
-                        <h3 class="skill-category-title"><i class="fas fa-desktop"></i> Operating Systems</h3>
-                        <div class="skills-list">
-                            <span class="skill-badge"><i class="fab fa-linux" style="color: #fcc624;"></i> Linux</span>
-                            <span class="skill-badge"><i class="fab fa-windows" style="color: #0078d4;"></i> Windows
-                                Server</span>
-                        </div>
-                    </div>
-
-                    <!-- Core Competencies -->
-                    <div class="skill-category-card">
-                        <h3 class="skill-category-title"><i class="fas fa-award"></i> Core Competencies</h3>
-                        <div class="skills-list">
-                            <span class="skill-badge">Cloud Migration</span>
-                            <span class="skill-badge">High Availability</span>
-                            <span class="skill-badge">Risk Assessment</span>
-                            <span class="skill-badge">Cross-Functional Leadership</span>
-                        </div>
+                </div>
+                <!-- Category 3 -->
+                <div class="skills-box">
+                    <h3>Systems & Servers</h3>
+                    <div class="skills-chips">
+                        <span class="chip linux"><span class="chip-dot"></span>Linux Systems</span>
+                        <span class="chip bash"><span class="chip-dot"></span>Bash Scripting</span>
+                        <span class="chip python"><span class="chip-dot"></span>Python (Boto3)</span>
+                        <span class="chip webserver"><span class="chip-dot"></span>Nginx / Apache</span>
+                        <span class="chip db"><span class="chip-dot"></span>MySQL Database</span>
+                        <span class="chip windows"><span class="chip-dot"></span>Windows Server</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="section reveal">
-            <div class="container">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="timeline">
-                    <!-- Experience 1 -->
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-role">Cloud / DevOps Engineer</h3>
-                                    <span class="timeline-company">Axiora Global Solutions</span>
-                                </div>
-                                <div class="timeline-meta">
-                                    <span class="timeline-date">Mar 2026 – Present</span>
-                                    <span class="timeline-location">Hyderabad, India</span>
-                                </div>
-                            </div>
-                            <div class="timeline-body">
-                                <ul>
-                                    <li>Manage and optimize scalable AWS cloud infrastructure to support enterprise
-                                        application requirements.</li>
-                                    <li>Design, build, and maintain robust, automated CI/CD workflows using YAML
-                                        pipelines.</li>
-                                    <li>Containerize legacy applications with Docker and orchestrate seamless
-                                        microservices deployment using Kubernetes.</li>
-                                    <li>Provision and manage infrastructure-as-code (IaC) utilizing Terraform to
-                                        guarantee environment consistency.</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag">AWS</span>
-                                <span class="timeline-tag">Kubernetes</span>
-                                <span class="timeline-tag">Docker</span>
-                                <span class="timeline-tag">Terraform</span>
-                                <span class="timeline-tag">YAML Pipelines</span>
-                                <span class="timeline-tag">CI/CD</span>
-                            </div>
-                        </div>
+        <section class="experience-section" id="experience">
+            <h2 class="section-title text-center">Work Experience</h2>
+            <div class="experience-list">
+                <div class="exp-card">
+                    <div class="exp-timeline-tag">
+                        <span class="date-badge">April 2025 – Present</span>
+                        <span class="status-marker">Active</span>
                     </div>
-
-                    <!-- Experience 2 -->
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div>
-                                    <h3 class="timeline-role">Cloud Engineer</h3>
-                                    <span class="timeline-company">Spiedee Insight Tech Pvt Ltd</span>
-                                </div>
-                                <div class="timeline-meta">
-                                    <span class="timeline-date">Jan 2025 – Jan 2026</span>
-                                    <span class="timeline-location">Visakhapatnam, India</span>
-                                </div>
-                            </div>
-                            <div class="timeline-body">
-                                <ul>
-                                    <li>Executed end-to-end Azure cloud migrations using Azure Site Recovery (ASR),
-                                        along with P2V and V2V server migrations.</li>
-                                    <li>Configured and maintained core cloud resources including Virtual Machines (VMs),
-                                        VNets, and Storage Accounts.</li>
-                                    <li>Administered Azure Active Directory and implemented strict Role-Based Access
-                                        Control (RBAC) security policies.</li>
-                                    <li>Orchestrated cloud cost-optimization strategies, significantly reducing
-                                        infrastructure spend through proactive Azure Monitor analysis.</li>
-                                </ul>
-                            </div>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag">Azure</span>
-                                <span class="timeline-tag">Azure Site Recovery (ASR)</span>
-                                <span class="timeline-tag">Azure AD</span>
-                                <span class="timeline-tag">RBAC</span>
-                                <span class="timeline-tag">Azure Monitor</span>
-                                <span class="timeline-tag">VNet / VM</span>
-                            </div>
-                        </div>
+                    <div class="exp-details">
+                        <h3 class="exp-role">AWS DevOps Engineer</h3>
+                        <h4 class="exp-company">Axiora Global Solutions <span class="loc">| Hyderabad, India</span></h4>
+                        <ul class="exp-bullets">
+                            <li>Managed and optimized scalable AWS cloud infrastructure, **reducing deployment times by 40%** and **improving resource utilization by 25%**.</li>
+                            <li>Designed and maintained automated CI/CD pipelines using GitHub Actions and YAML, **boosting deployment frequency by 60%** and **slashing recovery times by 50%**.</li>
+                            <li>Containerized applications using Docker and deployed workloads on Kubernetes (EKS/ECS), **improving container scaling efficiency by 30%**.</li>
+                            <li>Provisioned and managed infrastructure using Terraform (IaC) for consistent deployments, **achieving 100% reproducible environments**.</li>
+                            <li>Implemented AWS services including EC2, ECS, ECR, S3, IAM, VPC, ALB, and CloudWatch, **ensuring 99.9% uptime** across setups.</li>
+                            <li>Monitored application performance, improved system reliability, and optimized AWS infrastructure costs, **resulting in a 22% reduction in monthly cloud spend ($1,500+ saved)**.</li>
+                            <li>Collaborated with development teams to automate deployments and streamline release processes.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section reveal">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <!-- Project 1 (Placeholder) -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-icon-folder"><i class="far fa-folder"></i></div>
-                            <div class="project-links">
-                                <a href="#" target="_blank" rel="noopener noreferrer" title="View Source Code"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Cloud-Native Microservices Orchestration <span
-                                    class="placeholder-badge">Placeholder</span></h3>
-                            <p class="project-desc">
-                                <!-- PLACEHOLDER: Update description -->
-                                Designed and deployed a highly available microservices application containerized with
-                                Docker and orchestrated using Kubernetes.
-                            </p>
-                            <div class="project-achievements">
-                                <div class="project-achievement-item"><strong>Achieved:</strong> 99.9% uptime deployment
-                                    with zero-downtime rolling updates.</div>
-                                <div class="project-achievement-item"><strong>Migration:</strong> Provisioned with
-                                    Terraform and monitored via Prometheus.</div>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Kubernetes</span>
-                                <span class="project-tag">Docker</span>
-                                <span class="project-tag">Terraform</span>
-                                <span class="project-tag">AWS</span>
-                            </div>
-                        </div>
+        <section class="projects-section" id="projects">
+            <div class="section-header-center">
+                <h2 class="section-title">Key Projects</h2>
+            </div>
+            <div class="projects-grid-modern">
+                <!-- Project 1 -->
+                <div class="project-box prism-card">
+                    <div class="project-header">
+                        <span class="project-label label-orange">AWS Cloud Platform</span>
+                        <h3>Axiora Prism</h3>
                     </div>
-
-                    <!-- Project 2 (Placeholder) -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-icon-folder"><i class="far fa-folder"></i></div>
-                            <div class="project-links">
-                                <a href="#" target="_blank" rel="noopener noreferrer" title="View Source Code"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Automated GitOps CI/CD Pipeline <span
-                                    class="placeholder-badge">Placeholder</span></h3>
-                            <p class="project-desc">
-                                <!-- PLACEHOLDER: Update description -->
-                                Implemented a fully automated GitOps deployment pipeline using YAML files for continuous
-                                integration and continuous deployment.
-                            </p>
-                            <div class="project-achievements">
-                                <div class="project-achievement-item"><strong>Achieved:</strong> Reduced deployment
-                                    delivery time from hours to minutes.</div>
-                                <div class="project-achievement-item"><strong>Security:</strong> Enforced automated
-                                    secrets scanning and RBAC policies.</div>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">YAML Pipelines</span>
-                                <span class="project-tag">GitHub Actions</span>
-                                <span class="project-tag">Git</span>
-                                <span class="project-tag">Docker</span>
-                            </div>
-                        </div>
+                    <p class="project-desc">Designed and deployed a highly scalable, multi-tenant cloud-based CRM platform on AWS, automating the complete delivery loop.</p>
+                    <ul class="project-details">
+                        <li>Automated infrastructure provisioning using Terraform, **reducing environment set-up times from days to minutes**.</li>
+                        <li>Implemented CI/CD pipelines with GitHub Actions for immediate builds, **cutting build failures by 45%**.</li>
+                        <li>Configured CloudWatch monitoring and alerting, **reducing production downtime by 30%**.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>AWS</span>
+                        <span>Terraform</span>
+                        <span>GitHub Actions</span>
+                        <span>CloudWatch</span>
                     </div>
-
-                    <!-- Project 3 (Placeholder) -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-icon-folder"><i class="far fa-folder"></i></div>
-                            <div class="project-links">
-                                <a href="#" target="_blank" rel="noopener noreferrer" title="View Source Code"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Azure Enterprise Landing Zone Migration <span
-                                    class="placeholder-badge">Placeholder</span></h3>
-                            <p class="project-desc">
-                                <!-- PLACEHOLDER: Update description -->
-                                Spearheaded an end-to-end cloud migration of legacy server infrastructure to Azure
-                                utilizing automated cloud governance structures.
-                            </p>
-                            <div class="project-achievements">
-                                <div class="project-achievement-item"><strong>Achieved:</strong> Migrated 15+ services
-                                    with minimal operations disruption.</div>
-                                <div class="project-achievement-item"><strong>Cost Savings:</strong> Reduced annual
-                                    infrastructure overhead cost by 25%.</div>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Azure</span>
-                                <span class="project-tag">ASR</span>
-                                <span class="project-tag">Azure Monitor</span>
-                                <span class="project-tag">Active Directory</span>
-                            </div>
-                        </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-box pulse-card">
+                    <div class="project-header">
+                        <span class="project-label label-cyan">Containers & Security</span>
+                        <h3>Axiora Pulse</h3>
+                    </div>
+                    <p class="project-desc">Containerized and deployed an AI-Powered Business Platform, ensuring high availability, speed, and strict infrastructure access controls.</p>
+                    <ul class="project-details">
+                        <li>Deployed containerized microservices using Docker and Amazon ECS, **achieving 99.9% deployment success rates**.</li>
+                        <li>Implemented least-privilege IAM security policies for database/app integrations, **eliminating potential credential leak paths**.</li>
+                        <li>Resolved bottlenecks and webhook connectivity issues, **improving application API response times by 25%**.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Docker</span>
+                        <span>Amazon ECS</span>
+                        <span>AWS IAM</span>
+                        <span>API Gateways</span>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-box raptor-card">
+                    <div class="project-header">
+                        <span class="project-label label-purple">App Migration & Disaster Recovery</span>
+                        <h3>RAPTOR CRM</h3>
+                    </div>
+                    <p class="project-desc">Modernized and migrated a PHP-based CRM application on AWS, introducing automated backup systems and disaster recovery patterns.</p>
+                    <ul class="project-details">
+                        <li>Deployed and configured Nginx and PHP workloads on EC2 and MySQL, **supporting 5,000+ active users**.</li>
+                        <li>Implemented snapshot policies, disaster recovery strategies, and network security groups, **ensuring RPO < 1 hour**.</li>
+                        <li>Reduced production downtime by **45%** through proactive monitoring and subnet isolation.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Amazon EC2</span>
+                        <span>Nginx</span>
+                        <span>MySQL</span>
+                        <span>VPC Security</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Certifications & Education Section -->
-        <section id="certs-edu" class="section reveal">
-            <div class="container">
-                <div class="certs-edu-grid">
-                    <!-- Certifications (Placeholders) -->
-                    <div>
-                        <h2 class="grid-column-title"><i class="fas fa-certificate"></i> Certifications</h2>
-
-                        <!-- Cert 1 (Placeholder) -->
-                        <div class="cert-card">
-                            <div class="cert-icon"><i class="fas fa-award"></i></div>
-                            <div class="cert-info">
-                                <h4>Microsoft Certified: Azure Administrator Associate <span
-                                        class="placeholder-badge">Placeholder</span></h4>
-                                <p class="cert-org">Microsoft</p>
-                                <div class="cert-meta">
-                                    <span>Credential ID: [Azure-ID]</span>
-                                    <span>Issued: [Date]</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Cert 2 (Placeholder) -->
-                        <div class="cert-card">
-                            <div class="cert-icon"><i class="fas fa-award"></i></div>
-                            <div class="cert-info">
-                                <h4>AWS Certified Solutions Architect – Associate <span
-                                        class="placeholder-badge">Placeholder</span></h4>
-                                <p class="cert-org">Amazon Web Services</p>
-                                <div class="cert-meta">
-                                    <span>Credential ID: [AWS-ID]</span>
-                                    <span>Issued: [Date]</span>
-                                </div>
-                            </div>
-                        </div>
+        <!-- Interactive Terminal Simulator Section -->
+        <section class="terminal-section" id="terminal">
+            <h2 class="section-title text-center">Interactive Console</h2>
+            <div class="terminal-container-modern" id="terminal-container">
+                <div class="terminal-header-bar">
+                    <div class="circles">
+                        <span class="c-red"></span>
+                        <span class="c-yellow"></span>
+                        <span class="c-green"></span>
                     </div>
-
-                    <!-- Education -->
-                    <div>
-                        <h2 class="grid-column-title"><i class="fas fa-graduation-cap"></i> Education</h2>
-
-                        <!-- Education 1 -->
-                        <div class="edu-card">
-                            <div class="edu-icon"><i class="fas fa-university"></i></div>
-                            <div class="edu-info">
-                                <h4>Bachelor of Science (B.Sc.)</h4>
-                                <p class="edu-inst">Andhra University</p>
-                                <div class="edu-meta">
-                                    <span>2022 – 2025</span>
-                                    <span>Visakhapatnam, India</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Education 2 -->
-                        <div class="edu-card">
-                            <div class="edu-icon"><i class="fas fa-school"></i></div>
-                            <div class="edu-info">
-                                <h4>Intermediate (MPC)</h4>
-                                <p class="edu-inst">Andhra Pradesh Open School Society</p>
-                                <div class="edu-meta">
-                                    <span>2021 – 2022</span>
-                                    <span>Andhra Pradesh</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Education 3 -->
-                        <div class="edu-card">
-                            <div class="edu-icon"><i class="fas fa-school"></i></div>
-                            <div class="edu-info">
-                                <h4>Secondary School Certificate (SSC)</h4>
-                                <p class="edu-inst">Sri Sai Chaitanya School</p>
-                                <div class="edu-meta">
-                                    <span>2014 – 2015</span>
-                                    <span>Hyderabad, India</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="title-file">visitor@hemasai-devops: ~</div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Achievements Section -->
-        <section id="achievements" class="section reveal">
-            <div class="container">
-                <h2 class="section-title">Achievements</h2>
-                <div class="achievements-grid">
-                    <!-- Achievement 1 (Placeholder) -->
-                    <div class="achievement-card">
-                        <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
-                        <h3 class="achievement-title">Cloud Migration Milestone <span class="placeholder-badge"
-                                style="display:block; margin: 0.5rem auto 0 auto; width: fit-content;">Placeholder</span>
-                        </h3>
-                        <p class="achievement-desc">Successfully migrated heterogeneous environments containing 20+
-                            servers to Azure with 100% data integrity.</p>
-                    </div>
-
-                    <!-- Achievement 2 (Placeholder) -->
-                    <div class="achievement-card">
-                        <div class="achievement-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        <h3 class="achievement-title">Delivery Acceleration <span class="placeholder-badge"
-                                style="display:block; margin: 0.5rem auto 0 auto; width: fit-content;">Placeholder</span>
-                        </h3>
-                        <p class="achievement-desc">Reduced deployment iteration duration cycles through building robust
-                            YAML pipelines, reducing operational friction.</p>
-                    </div>
-
-                    <!-- Achievement 3 (Placeholder) -->
-                    <div class="achievement-card">
-                        <div class="achievement-icon"><i class="fas fa-piggy-bank"></i></div>
-                        <h3 class="achievement-title">Cost Reduction <span class="placeholder-badge"
-                                style="display:block; margin: 0.5rem auto 0 auto; width: fit-content;">Placeholder</span>
-                        </h3>
-                        <p class="achievement-desc">Achieved infrastructure spend optimization through automated script
-                            routines and active monitoring controls.</p>
-                    </div>
+                <div class="terminal-text-area" id="terminal-output">
+                    <p class="terminal-line system-line">Initializing interactive DevOps shell... Connected.</p>
+                    <p class="terminal-line system-line">Type <span class="highlight-line">help</span> to view available resume actions.</p>
+                    <br>
+                </div>
+                <div class="terminal-prompt-line">
+                    <span class="prompt-arrow">visitor@hemasai-devops:~$</span>
+                    <input type="text" class="prompt-input" id="terminal-command-input" autocomplete="off" aria-label="Terminal command input">
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section reveal">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <p class="contact-desc">
-                            Have an exciting project, a role opening, or just want to chat about DevOps and Cloud
-                            architecture? Drop me a message! I'll get back to you as soon as possible.
-                        </p>
-
-                        <div class="contact-card">
-                            <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="contact-card-details">
-                                <h4>Email</h4>
-                                <p><a href="mailto:hemasai0563@gmail.com">hemasai0563@gmail.com</a></p>
-                            </div>
+        <section class="contact-section" id="contact">
+            <div class="contact-card-modern">
+                <div class="contact-details">
+                    <h2 class="section-title">Let's Connect</h2>
+                    <p>Have an infrastructure challenge, a pipeline bottleneck, or want to discuss scaling? Drop a message and let's automate together.</p>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <span class="label-method">Email</span>
+                            <a href="mailto:hemasai0563@gmail.com">hemasai0563@gmail.com</a>
                         </div>
-
-                        <div class="contact-card">
-                            <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
-                            <div class="contact-card-details">
-                                <h4>Phone</h4>
-                                <p><a href="tel:+918790463245">+91 8790463245</a></p>
-                            </div>
+                        <div class="contact-item">
+                            <span class="label-method">Phone</span>
+                            <a href="tel:+918790463245">+91 8790463245</a>
                         </div>
-
-                        <div class="contact-card">
-                            <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="contact-card-details">
-                                <h4>Location</h4>
-                                <p>Hyderabad, India</p>
-                            </div>
+                        <div class="contact-item">
+                            <span class="label-method">Location</span>
+                            <span>Hyderabad, India</span>
                         </div>
-
-                        <div class="contact-socials">
-                            <!-- Social Profile links (Placeholders) -->
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon"
-                                title="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="social-icon"
-                                title="GitHub Profile"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="contact-form-container">
-                        <form id="contact-form" action="https://formspree.io/f/mkolzraz" method="POST"
-                            class="contact-form">
-                            <div class="form-group">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="John Doe"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" id="email" name="email" class="form-control"
-                                    placeholder="john@example.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject" class="form-label">Subject</label>
-                                <input type="text" id="subject" name="subject" class="form-control"
-                                    placeholder="Project Discussion" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea id="message" name="message" class="form-control"
-                                    placeholder="Write your message here..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                <i class="fas fa-paper-plane"></i> Send Message
-                            </button>
-                            <div id="form-message" class="form-message"></div>
-                        </form>
                     </div>
                 </div>
+
+                <form name="contact" method="POST" data-netlify="true" class="contact-form-modern" id="contact-form">
+                    <input type="hidden" name="form-name" value="contact">
+                    
+                    <div class="form-row">
+                        <div class="form-group-modern">
+                            <label for="form-name-input">Name</label>
+                            <input type="text" name="name" id="form-name-input" placeholder="Hema Sai" required>
+                        </div>
+                        <div class="form-group-modern">
+                            <label for="form-email-input">Email</label>
+                            <input type="email" name="email" id="form-email-input" placeholder="hema@devops.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group-modern">
+                        <label for="form-subject-input">Subject</label>
+                        <input type="text" name="subject" id="form-subject-input" placeholder="Infrastructure Deployment" required>
+                    </div>
+                    <div class="form-group-modern">
+                        <label for="form-message-input">Message</label>
+                        <textarea name="message" id="form-message-input" rows="4" placeholder="Let's build something..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit-modern" id="form-submit-btn">
+                        <span>Send Message</span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </form>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-copy">&copy; 2026 Hema Sai Siddula. All rights reserved.</p>
-            <button id="back-to-top" class="back-to-top" title="Back to Top">
-                <i class="fas fa-chevron-up"></i>
-            </button>
+    <footer class="footer-modern">
+        <div class="footer-wrap">
+            <span class="copyright">&copy; 2026 Hema Sai Siddula. All rights reserved.</span>
+            <div class="socials">
+                <a href="https://github.com/hemasai0563-tech" target="_blank" rel="noopener noreferrer" id="social-github" aria-label="GitHub">GitHub</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" id="social-linkedin" aria-label="LinkedIn">LinkedIn</a>
+                <a href="mailto:hemasai0563@gmail.com" id="social-email" aria-label="Email">Email</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Custom JS -->
+    <!-- Main JavaScript File -->
     <script src="script.js"></script>
 </body>
-
 </html>

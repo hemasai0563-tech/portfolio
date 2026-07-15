@@ -1,208 +1,192 @@
-/* ==========================================================================
-   HEMA SAI SIDDULA - PORTFOLIO INTERACTIVITY SCRIPT
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. Dismiss Loading Screen ---
-    const loader = document.getElementById('loader-wrapper');
-    if (loader) {
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 300);
-            }, 500); // Small buffer for smooth entrance
-        });
-    }
-
-    // --- 2. Sticky Navigation Bar & Active Highlighting ---
-    const navbar = document.getElementById('navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
-
-    const handleScroll = () => {
-        // Sticky class on header
+    // === 1. Navbar Scroll Effect ===
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+            header.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            header.classList.remove('scrolled');
         }
+    });
 
-        // Active link highlighting on scroll
-        let currentSectionId = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                currentSectionId = section.getAttribute('id');
-            }
-        });
+    // === 2. Mobile Menu Toggle ===
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-navigation');
+    const navLinks = document.querySelectorAll('.nav-link, .nav-btn');
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSectionId}`) {
-                link.classList.add('active');
-            }
+    mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            navMenu.classList.remove('active');
         });
+    });
+
+    // === 3. Live Horizontal CI/CD Pipeline Visualizer ===
+    const nodes = {
+        commit: document.getElementById('node-commit'),
+        build: document.getElementById('node-build'),
+        test: document.getElementById('node-test'),
+        deploy: document.getElementById('node-deploy')
     };
+    const connectors = {
+        conn1: document.getElementById('conn-1'),
+        conn2: document.getElementById('conn-2'),
+        conn3: document.getElementById('conn-3')
+    };
+    const pipeStatusText = document.getElementById('pipe-status-text');
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Run once in case user starts partially scrolled
-
-    // --- 3. Mobile Hamburger Menu Toggle ---
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinksContainer = document.getElementById('nav-links');
-
-    if (menuToggle && navLinksContainer) {
-        menuToggle.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            if (icon) {
-                if (navLinksContainer.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            }
-        });
-
-        // Close mobile menu on clicking any navigation link
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinksContainer.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-        });
-    }
-
-    // --- 4. Scroll Reveal Animations (Intersection Observer) ---
-    const revealElements = document.querySelectorAll('.reveal');
-    
-    if ('IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Stop observing after animation triggers
-                }
-            });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        revealElements.forEach(element => {
-            revealObserver.observe(element);
-        });
-    } else {
-        // Fallback for older browsers
-        revealElements.forEach(element => {
-            element.classList.add('active');
-        });
-    }
-
-    // --- 5. Interactive Contact Form Submission ---
-    const contactForm = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
-
-    if (contactForm && formMessage) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (!name || !email || !subject || !message) {
-                showFormMessage('Please fill in all fields.', 'error');
-                return;
-            }
-
-            // Simulate sending state
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnContent = submitBtn.innerHTML;
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Transmission Sending...';
-
-            const actionUrl = contactForm.getAttribute('action');
-            if (!actionUrl || actionUrl.includes('YOUR_FORMSPREE_ID_HERE')) {
-                // If Formspree ID is not configured, fall back to a mock simulation
-                setTimeout(() => {
-                    showFormMessage('Simulation Mode: Form must be configured with a Formspree ID to receive real emails. See README.', 'error');
-                    contactForm.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnContent;
-                }, 1000);
-                return;
-            }
-
-            // Actual form submission using fetch
-            fetch(actionUrl, {
-                method: 'POST',
-                body: new FormData(contactForm),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    showFormMessage('Message sent successfully! I will get back to you shortly.', 'success');
-                    contactForm.reset();
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            showFormMessage(data['errors'].map(error => error['message']).join(', '), 'error');
-                        } else {
-                            showFormMessage('Oops! There was a problem submitting your form.', 'error');
-                        }
-                    });
-                }
-            })
-            .catch(error => {
-                showFormMessage('Network error. Please check your internet connection.', 'error');
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnContent;
-            });
-        });
-    }
-
-    const showFormMessage = (text, type) => {
-        formMessage.textContent = text;
-        formMessage.className = `form-message ${type}`;
+    function runPipeline() {
+        // Reset all nodes
+        Object.values(nodes).forEach(n => n.className = 'pipeline-node');
+        Object.values(connectors).forEach(c => c.className = 'pipeline-connector-horizontal');
         
-        // Hide message after 5 seconds
+        // Step 1: Code Commit
+        pipeStatusText.textContent = "Checking code updates...";
+        pipeStatusText.className = "status-text running";
+        nodes.commit.classList.add('active');
+
         setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
+            // Step 2: Triggering Build
+            pipeStatusText.textContent = "Building Docker artifacts...";
+            connectors.conn1.classList.add('active');
+            nodes.commit.classList.add('success');
+            nodes.commit.classList.remove('active');
+            
+            setTimeout(() => {
+                nodes.build.classList.add('active');
+                
+                setTimeout(() => {
+                    // Step 3: Running Tests
+                    pipeStatusText.textContent = "Running K8s checks...";
+                    connectors.conn2.classList.add('active');
+                    nodes.build.classList.add('success');
+                    nodes.build.classList.remove('active');
+                    
+                    setTimeout(() => {
+                        nodes.test.classList.add('active');
+                        
+                        setTimeout(() => {
+                            // Step 4: Terraform deployment
+                            pipeStatusText.textContent = "Applying Terraform plans...";
+                            connectors.conn3.classList.add('active');
+                            nodes.test.classList.add('success');
+                            nodes.test.classList.remove('active');
+                            
+                            setTimeout(() => {
+                                nodes.deploy.classList.add('active');
+                                
+                                setTimeout(() => {
+                                    nodes.deploy.classList.add('success');
+                                    nodes.deploy.classList.remove('active');
+                                    pipeStatusText.textContent = "AWS Deploy Complete!";
+                                    pipeStatusText.className = "status-text success";
+                                    
+                                    // Restart pipeline after 8 seconds of idle
+                                    setTimeout(runPipeline, 8000);
+                                }, 2000);
+                            }, 1000);
+                        }, 2500);
+                    }, 1000);
+                }, 2000);
+            }, 1000);
+        }, 2000);
+    }
+
+    runPipeline();
+
+    // === 4. Interactive DevOps Terminal Console ===
+    const termBody = document.getElementById('terminal-output');
+    const termInput = document.getElementById('terminal-command-input');
+    const termContainer = document.getElementById('terminal-container');
+
+    termContainer.addEventListener('click', () => {
+        termInput.focus();
+    });
+
+    const commandHistory = [];
+    let historyIdx = -1;
+
+    const resumeData = {
+        about: "HEMA SAI SIDDULA - AWS DevOps & Cloud Engineer\nOverall Experience: 5.3+ Years\nCloud & DevOps Specialist. Focused on infrastructure automation, high-availability, and continuous deployment pipelines.",
+        skills: "Cloud platforms:\n - AWS (EC2, S3, IAM, VPC, ELB, Auto Scaling, CloudWatch)\n - Azure Cloud\n\nDevOps & CI/CD:\n - Docker, Kubernetes (EKS/ECS), Terraform\n - GitHub Actions, YAML Pipelines, Git/GitHub\n - Helm Charts, Ansible\n\nSystems & Scripting:\n - Linux, Bash & Python (Boto3)\n - Nginx, Apache, MySQL",
+        experience: "Axiora Global Solutions (April 2025 - Present)\nAWS DevOps Engineer\n - Provisioned resources via Terraform, achieving 100% reproducible environments\n - Designed CI/CD release cycles with GitHub Actions, boosting release speed by 60%\n - Containerized workloads in Docker/K8s, scaling efficiency up by 30%\n - Optimized cloud usage, reducing monthly spend by 22% ($1,500+ saved)",
+        projects: "1. Axiora Prism - CRM Platform (Terraform, GitHub Actions, AWS EC2/RDS)\n   -> Reduced env setup times from days to minutes; cut downtime by 30%\n2. Axiora Pulse - AI Platform (ECS Fargate, IAM, APIs)\n   -> Achieved 99.9% deployment success rates; cut API latency by 25%\n3. RAPTOR CRM - PHP migration (EC2, Nginx, MySQL, Auto Backups)\n   -> Supported 5,000+ users; ensured RPO < 1 hour; cut downtime by 45%",
+        contact: "Email: hemasai0563@gmail.com\nPhone: +91 8790463245\nLocation: Hyderabad, India"
     };
 
-    // --- 6. Back to Top Button ---
-    const backToTopBtn = document.getElementById('back-to-top');
-    if (backToTopBtn) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                backToTopBtn.style.display = 'flex';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        });
+    termInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const cmdText = termInput.value.trim().toLowerCase();
+            termInput.value = '';
 
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+            if (cmdText) {
+                commandHistory.push(cmdText);
+                historyIdx = commandHistory.length;
+                
+                // Echo command
+                appendTerminalLine(`visitor@hemasai-devops:~$ ${cmdText}`, 'terminal-line highlight-line');
+                executeTerminalCommand(cmdText);
+            }
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (historyIdx > 0) {
+                historyIdx--;
+                termInput.value = commandHistory[historyIdx];
+            }
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (historyIdx < commandHistory.length - 1) {
+                historyIdx++;
+                termInput.value = commandHistory[historyIdx];
+            } else {
+                historyIdx = commandHistory.length;
+                termInput.value = '';
+            }
+        }
+    });
+
+    function appendTerminalLine(text, className = 'terminal-line system-line') {
+        const line = document.createElement('p');
+        line.className = className;
+        line.innerHTML = text.replace(/\n/g, '<br>');
+        termBody.appendChild(line);
+        termBody.scrollTop = termBody.scrollHeight;
+    }
+
+    function executeTerminalCommand(cmd) {
+        switch (cmd) {
+            case 'help':
+                appendTerminalLine("Available commands:\n - <span class='highlight-line'>about</span>      : Display professional summary\n - <span class='highlight-line'>skills</span>     : View technical skills stack\n - <span class='highlight-line'>experience</span> : Show work history details\n - <span class='highlight-line'>projects</span>   : List major projects\n - <span class='highlight-line'>contact</span>    : Print contact options\n - <span class='highlight-line'>github</span>     : Open GitHub profile in new tab\n - <span class='highlight-line'>clear</span>      : Clear the console logs", 'terminal-line system-line');
+                break;
+            case 'about':
+                appendTerminalLine(resumeData.about, 'terminal-line system-line');
+                break;
+            case 'skills':
+                appendTerminalLine(resumeData.skills, 'terminal-line system-line');
+                break;
+            case 'experience':
+                appendTerminalLine(resumeData.experience, 'terminal-line system-line');
+                break;
+            case 'projects':
+                appendTerminalLine(resumeData.projects, 'terminal-line system-line');
+                break;
+            case 'contact':
+                appendTerminalLine(resumeData.contact, 'terminal-line system-line');
+                break;
+            case 'github':
+                appendTerminalLine("Opening GitHub profile...", 'terminal-line success-line');
+                window.open('https://github.com/hemasai0563-tech', '_blank');
+                break;
+            case 'clear':
+                termBody.innerHTML = '';
+                break;
+            default:
+                appendTerminalLine(`Command not found: ${cmd}. Type 'help' for options.`, 'terminal-line warning-line');
+        }
     }
 });
